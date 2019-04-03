@@ -27,13 +27,23 @@ INFO: Started SpringConfigApplication in 2.241 seconds (JVM running for 5.556)
 
 ```
 
-- https://knowledge.digicert.com/solution/SO4085.html
 - download pcf cert.
 
 ```
 
 cd $JAVA_HOME/jre/lib/security
-keytool -import -trustcacerts -keystore cacerts -storepass changeit -alias pcfdemo -file /Users/minseok/Downloads/spring-config/system.pcfdemo.net.pem
+
+# all the same with followings:
+keytool -import                    -keystore cacerts -storepass changeit -alias pcfdemo -file <PATH-TO>/system.pcfdemo.net.pem
+keytool -import      -trustcacerts -keystore cacerts -storepass changeit -alias pcfdemo -file <PATH-TO>/system.pcfdemo.net.pem
+keytool -importcert  -trustcacerts -keystore cacerts -storepass changeit -alias pcfdemo -file <PATH-TO>/system.pcfdemo.net.pem
+
+
+keytool -list -keystore cacerts | grep pcfdemo
+
+## delete 
+# keytool -delete  -alias pcfdemo  -keystore ${JAVA_HOME}/jre/lib/security/cacerts -storepass changeit
+
 
 
 ```
@@ -56,4 +66,7 @@ Apr 03, 2019 10:36:39 PM org.springframework.boot.StartupInfoLogger logStarted
 INFO: Started SpringConfigApplication in 2.564 seconds (JVM running for 6.262)
 ```
 
-https://docs.pivotal.io/spring-cloud-services/1-5/common/client-troubleshooting.html
+- https://docs.pivotal.io/spring-cloud-services/1-5/common/client-troubleshooting.html
+- https://javarevisited.blogspot.com/2012/03/add-list-certficates-java-keystore.html
+- https://knowledge.digicert.com/solution/SO4085.html
+- https://www.lesstif.com/pages/viewpage.action?pageId=12451848
