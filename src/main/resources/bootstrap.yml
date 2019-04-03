@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: aaa
+  cloud:
+    config:
+     uri: https://config-c61e8f98-72d0-444d-abfc-2668ace3af9b.apps.pcfdemo.net
+     access_token_uri: https://p-spring-cloud-services.uaa.system.pcfdemo.net/oauth/token
+     username: p-config-server-c4a56a3d-9507-4c2f-9cd1-f858dbf9e11c
+     password: 9aGx9K5Vx0cM
