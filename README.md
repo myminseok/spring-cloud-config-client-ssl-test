@@ -33,7 +33,11 @@ INFO: Started SpringConfigApplication in 2.241 seconds (JVM running for 5.556)
 ```
 
 cd $JAVA_HOME/jre/lib/security
-keytool -import -trustcacerts -keystore cacerts -storepass changeit -alias pcfdemo -file /Users/minseok/Downloads/spring-config/system.pcfdemo.net.pem
+
+keytool -import -trustcacerts -keystore cacerts -storepass changeit -alias pcfdemo -file <PATH-TO>/system.pcfdemo.net.pem
+
+keytool -list -keystore cacerts | grep pcfdemo
+
 
 
 ```
